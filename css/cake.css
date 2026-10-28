@@ -1,0 +1,20 @@
+/* CAKE: ilustrasi kue (tidak diubah) */
+.cakewrap{width:min(46vw,230px);margin:1rem 0 .5rem;filter:drop-shadow(0 20px 40px rgba(47,111,237,.45))}
+.cakewrap svg{width:100%;height:auto;overflow:visible}
+.tier,.drip,.candle,.plate{transform-box:fill-box;transform-origin:center}
+.cakewrap .tier,.cakewrap .drip,.cakewrap .candle{opacity:0;transform:translateY(-50px)}
+.cakewrap .plate{opacity:.4}
+.cakewrap .flame{opacity:0}
+.go .cakewrap .plate,.lit .plate{opacity:1;transition:.6s}
+.go .cakewrap .tier,.go .cakewrap .drip,.go .cakewrap .candle{animation:build .7s cubic-bezier(.3,1.5,.5,1) forwards;animation-delay:var(--d)}
+@keyframes build{to{opacity:1;transform:none}}
+.go .cakewrap .flame{animation:ignite .5s ease-out forwards,flick .35s ease-in-out infinite alternate;animation-delay:var(--d),calc(var(--d) + .5s)}
+@keyframes ignite{from{opacity:0;transform:scale(0)}to{opacity:1;transform:scale(1)}}
+@keyframes flick{from{transform:scale(1,1) rotate(-2deg)}to{transform:scale(.92,1.1) rotate(2deg)}}
+.flame{transform-box:fill-box;transform-origin:50% 100%}
+.lit .tier,.lit .drip,.lit .candle{opacity:1;transform:none}
+.lit .flame{opacity:1;animation:flick .35s ease-in-out infinite alternate}
+.spark{opacity:0}
+.go .spark,.lit .spark{animation:tw 2s ease-in-out infinite;animation-delay:var(--d)}
+@keyframes tw{50%{opacity:1;transform:scale(1.4)}}
+.spark{transform-box:fill-box;transform-origin:center}

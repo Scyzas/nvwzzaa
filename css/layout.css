@@ -1,0 +1,30 @@
+/* LAYOUT: kerangka tiap section */
+#hero{position:relative;overflow:hidden;min-height:100vh;min-height:100svh;display:grid;place-items:center;text-align:center;
+  padding:calc(2rem + env(safe-area-inset-top,0px)) calc(1.5rem + env(safe-area-inset-right,0px)) calc(2rem + env(safe-area-inset-bottom,0px)) calc(1.5rem + env(safe-area-inset-left,0px))}
+.hero-in{position:relative;z-index:2;display:flex;flex-direction:column;align-items:center;width:100%}
+#hint{position:absolute;z-index:2;left:0;right:0;bottom:calc(1.5rem + env(safe-area-inset-bottom,0px))}
+
+/* Latar hero: ganti lewat CONFIG.hero.background (gradient | grid | image | color) */
+#hero{background:var(--bg)}
+#hero[data-bg="gradient"]{background:radial-gradient(ellipse at 50% 0%,#12307a 0%,var(--bg) 65%)}
+#hero[data-bg="color"]{background:var(--hero-color,var(--bg))}
+#hero[data-bg="grid"]{background-color:var(--bg);background-size:56px 56px;
+  background-image:linear-gradient(rgba(125,180,255,.12) 1px,transparent 1px),linear-gradient(90deg,rgba(125,180,255,.12) 1px,transparent 1px)}
+#hero[data-bg="image"]{background:linear-gradient(rgba(5,11,31,.55),rgba(5,11,31,.78)),var(--hero-image) center/cover no-repeat}
+
+#ucapan{min-height:100vh;min-height:100svh;display:grid;place-items:center;text-align:center;padding:5rem 1.5rem;background:linear-gradient(var(--bg),#0a1b4a 55%,#123a8f)}
+#ucapan .cakewrap{width:150px;margin:0 auto 1.5rem}
+
+#harapan{position:relative;padding:6rem 1.5rem;color:#22324d;background:
+  repeating-linear-gradient(0deg,transparent 0 58px,rgba(30,60,110,.07) 58px 60px),
+  repeating-linear-gradient(90deg,transparent 0 118px,rgba(30,60,110,.05) 118px 120px),
+  linear-gradient(var(--wall),var(--wall-d))}
+#harapan::before{content:"";position:absolute;inset:0;box-shadow:inset 0 40px 50px -25px rgba(18,58,143,.7);pointer-events:none}
+.wall{max-width:1000px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(240px,100%),1fr));gap:3rem 2.2rem}
+
+#memory{padding:6rem 1.5rem 7rem;background:linear-gradient(#123a8f,#071433 25%,#050b1f)}
+.table{max-width:1000px;margin:0 auto;padding:3rem 2rem;border-radius:18px;display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:2.6rem 2rem;
+  background:repeating-linear-gradient(92deg,rgba(0,0,0,.14) 0 3px,transparent 3px 11px),repeating-linear-gradient(88deg,rgba(255,255,255,.04) 0 2px,transparent 2px 17px),linear-gradient(var(--wood),var(--wood-d));
+  box-shadow:0 30px 60px rgba(0,0,0,.6),inset 0 0 0 6px #2b221b}
+
+footer{text-align:center;padding:2rem 1rem calc(3rem + env(safe-area-inset-bottom,0px));background:#050b1f;color:var(--muted)}

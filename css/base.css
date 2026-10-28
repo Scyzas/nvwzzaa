@@ -1,0 +1,16 @@
+/* BASE: token, reset, tipografi, state global */
+:root{
+  --bg:#050b1f; --bg2:#0b1d4d; --blue:#2f6fed; --sky:#7db4ff; --ice:#e8f1ff; --gold:#f2c46b; --muted:#a9bddf;
+  --wall:#dfe8f2; --wall-d:#c3d2e4; --paper:#fdfeff; --line:#c6dcf3; --wood:#5b4a3c; --wood-d:#3d3027;
+  color-scheme:dark;
+}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+*{box-sizing:border-box;margin:0}
+body{background:var(--bg);color:var(--ice);font-family:'Plus Jakarta Sans',system-ui,sans-serif;overflow-x:hidden;-webkit-tap-highlight-color:transparent}
+.serif{font-family:'Fraunces',Georgia,serif}
+.hand{font-family:'Caveat','Segoe Script',cursive}
+/* Terkunci sampai tombol ditekan */
+html.locked,body.locked{overflow:hidden;height:100%;overscroll-behavior:none;touch-action:none}
+/* Reveal saat scroll */
+.rv{opacity:0;transform:translateY(40px);transition:opacity .9s,transform .9s}
+.rv.in{opacity:1;transform:none}

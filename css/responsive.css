@@ -1,0 +1,21 @@
+/* RESPONSIVE: penyesuaian layar kecil */
+#hero .cakewrap{width:min(46vw,230px,30svh)}
+
+@media (max-width:600px){
+  #harapan{padding:4.5rem 1.1rem}
+  #memory{padding:4.5rem 1rem 5rem}
+  #ucapan{padding:4rem 1.2rem}
+  #ucapan .cakewrap{width:120px}
+  .sec-sub{margin-bottom:2.6rem}
+  .wall{grid-template-columns:1fr;gap:2.4rem 1rem}
+  .note{min-height:0;padding:2rem 1.2rem 1.3rem}
+  .note p{font-size:1.35rem}
+  .table{grid-template-columns:repeat(2,1fr);gap:1.8rem 1rem;padding:1.6rem 1rem;border-radius:14px}
+  .frame .card{padding:8px 8px 36px}
+  .frame.gold .card{padding:6px 6px 32px;border-width:6px}
+  .frame .cap{font-size:1.1rem;bottom:6px}
+  .frame::before{width:48px;height:18px;margin-left:-24px;top:-9px}
+  .frame .ph{font-size:.75rem;padding:.4rem}
+  #start{width:min(100%,280px)}
+}
+@media (max-height:620px){#hero .cakewrap{width:min(24svh,140px)}#name{margin-bottom:1rem}}
